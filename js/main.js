@@ -14,21 +14,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle intersection observer for animations (optional)
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.nav-menu-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinksContainer) {
+        menuToggle.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+
+            // Optional: Animate hamburger to X
+            const spans = menuToggle.querySelectorAll('span');
+            if (navLinksContainer.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
             }
         });
-    }, { threshold: 0.1 });
 
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(card);
-    });
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navLinksContainer.contains(e.target)) {
+                navLinksContainer.classList.remove('active');
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    }
 });
