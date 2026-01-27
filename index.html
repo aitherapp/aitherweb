@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aither | Secure & Decentralized Messaging</title>
+    <meta name="description"
+        content="Aither is a secure, decentralized messaging platform powered by the Signal Protocol and AVP. Military-grade encryption, zero-knowledge, and fully P2P.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/logo.png">
+    <meta name="theme-color" content="#1f2937">
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Aither Logo">
+                <span>A I T H E R</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="faq.html">FAQ</a>
+                <a href="roadmap.html">Roadmap</a>
+                <a href="download.html">Download</a>
+            </div>
+            <a href="download.html" class="btn btn-primary">Get Aither</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>The Future of Private Communication</h1>
+                <p>Aither is a decentralized messaging application designed for absolute privacy. Powered by the Aither
+                    Voynich Protocol (AVP), we deliver military-grade encryption in a fully P2P environment.</p>
+                <div class="hero-btns">
+                    <a href="download.html" class="btn btn-primary">Download for Desktop</a>
+                    <a href="about.html" class="btn btn-outline">Learn How it Works</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2 class="text-center">Why Aither?</h2>
+                <div class="features-grid">
+                    <div class="card">
+                        <div class="card-icon">🔐</div>
+                        <h3>End-to-End Encryption</h3>
+                        <p>We use AVP that includes the best protocol for military-grade security. Your messages are
+                            encrypted long before they leave your device.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🌐</div>
+                        <h3>Fully Decentralized</h3>
+                        <p>No central servers. Aither uses a P2P architecture via Iroh and DHT (Distributed Hash Table)
+                            for communication and discovery.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>Quantum Resistant</h3>
+                        <p>Designed with the future in mind. Our AVP protocol prepares your communication for the
+                            post-quantum era.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">👤</div>
+                        <h3>Zero Knowledge</h3>
+                        <p>No phone numbers, no email addresses, no tracking. Your identity is your private key, and
+                            your data stays on your device.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" style="background-color: var(--card-bg);">
+            <div class="container">
+                <div style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2>Distributed Networking</h2>
+                        <p>Traditional apps rely on centralized servers that can be hacked, censored, or shut down.
+                            Aither turns every user into a node in a global, resilient network.</p>
+                        <p>Using <strong>Iroh P2P</strong> and <strong>Pkarr DHT</strong>, your device finds and
+                            connects directly to your contacts, bypassing intermediaries entirely.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 300px; text-align: center;">
+                        <img src="assets/logo.png" alt="Aither Networking"
+                            style="width: 100%; max-width: 400px; filter: drop-shadow(0 0 20px #3b82f644);">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <img src="assets/logo.png" alt="Aither Logo">
+                        <span>A I T H E R</span>
+                    </div>
+                    <p>Securing human communication through decentralization and advanced cryptography.</p>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="faq.html">FAQ</a></p>
+                    <p><a href="roadmap.html">Roadmap</a></p>
+                    <p><a href="download.html">Download</a></p>
+                </div>
+                <div>
+                    <h4>Community</h4>
+                    <p><a href="https://github.com/Voynich/aither">GitHub</a></p>
+                    <p><a href="#">Discord</a></p>
+                    <p><a href="#">Twitter</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Aither Project. Built for privacy, hosted on the edge.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+</body>
+
+</html>

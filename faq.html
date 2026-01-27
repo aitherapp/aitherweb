@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Aither</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="assets/logo.png">
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Aither Logo">
+                <span>A I T H E R</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="faq.html" class="active">FAQ</a>
+                <a href="roadmap.html">Roadmap</a>
+                <a href="download.html">Download</a>
+            </div>
+            <a href="download.html" class="btn btn-primary">Get Aither</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about Aither's security and architecture.</p>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 4rem 2rem;">
+        <div style="max-width: 800px; margin: 0 auto;" class="space-y-6">
+            <div class="card">
+                <h3>Is Aither free to use?</h3>
+                <p>Yes. Aither is open-source and free to download. We believe secure communication is a fundamental
+                    human right.</p>
+            </div>
+
+            <div class="card">
+                <h3>How is Aither different from Signal or Telegram?</h3>
+                <p>Signal and Telegram use centralized servers to route messages and store contact data. Aither has
+                    <strong>no central servers</strong>. Your identity is stored in a Distributed Hash Table (DHT), and
+                    messages are sent directly between devices using P2P protocols.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Do I need a phone number to sign up?</h3>
+                <p>No. Aither uses Ed25519 keypairs for identity. Your "account" is a 64-character hexadecimal private
+                    key. You never have to provide a phone number, email, or any other personal identifier.</p>
+            </div>
+
+            <div class="card">
+                <h3>Can I use Aither on multiple devices?</h3>
+                <p>Currently, Aither is optimized for single-device desktop use. Since your keys are stored on your
+                    device, you must export and import your private key to move your identity to a new installation.
+                    Multi-device syncing is on our roadmap.</p>
+            </div>
+
+            <div class="card">
+                <h3>Where are my messages stored?</h3>
+                <p>Your message history is stored only on your own device in an encrypted SQLite database. Aither has no
+                    cloud storage; if you lose your device and haven't backed up your keys, your data cannot be
+                    recovered.</p>
+            </div>
+
+            <div class="card">
+                <h3>Do you collect Aither metadata?</h3>
+                <p>Because Aither is P2P, there is no central entity collecting metadata about who you talk to. While
+                    network-level analysis could potentially reveal connection patterns (as with any internet-based
+                    communication), we minimize metadata to the absolute technological limit.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 Aither Project. Built for privacy, hosted on the edge.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
