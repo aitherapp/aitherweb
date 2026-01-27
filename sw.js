@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aither-v2';
+const CACHE_NAME = 'aither-v3';
 const ASSETS = [
     './',
     './index.html',
