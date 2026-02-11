@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aither-v3';
+const CACHE_NAME = 'aither-v4';
 const ASSETS = [
     './',
     './index.html',
@@ -6,8 +6,8 @@ const ASSETS = [
     './faq.html',
     './roadmap.html',
     './download.html',
-    './css/main.css',
-    './js/main.js',
+    './css/main.css?v=4',
+    './js/main.js?v=4',
     './assets/logo.png',
     './manifest.json'
 ];
@@ -32,9 +32,26 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+    // Network first for HTML/Navigation, Stale-while-revalidate for others
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            fetch(event.request).catch(() => caches.match(event.request))
+        );
+        return;
+    }
+
     event.respondWith(
-        caches.match(event.request)
-            .then(response => response || fetch(event.request))
+        caches.match(event.request).then(response => {
+            const fetchPromise = fetch(event.request).then(networkResponse => {
+                if (networkResponse && networkResponse.status === 200) {
+                    const cacheCopy = networkResponse.clone();
+                    caches.open(CACHE_NAME).then(cache => cache.put(event.request, cacheCopy));
+                }
+                return networkResponse;
+            }).catch(() => { });
+
+            return response || fetchPromise;
+        })
     );
 });
 
